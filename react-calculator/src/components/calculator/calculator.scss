@@ -1,0 +1,71 @@
+@import '_asset.scss';
+.calculator {
+	padding: 20px;
+	height: 700px;
+	width: 375px;
+	overflow: hidden;
+	border-radius: 20px;
+	background-color: $background-color1;
+	box-shadow: $black;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.calculator__btns {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 15px;
+	button {
+		border: 0;
+		outline: 0;
+		border-radius: 24px;
+		font-size: 19pt;
+		font-weight: 500;
+		background-color: $background-color2;
+		color: $colorone;
+		&:last-child {
+			color: $colortwo;
+			background-color: $bluegrey;
+		}
+	}
+	.btn__right {
+		color: $white;
+		background-color: $bluegrey;
+	}
+	.btn__upper {
+		color: $colorone;
+		background-color: $background-color3;
+	}
+}
+.calculator__result {
+	position: relative;
+	margin-bottom: 20px;
+	text-align: right;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+.calculator__result__exp {
+	font-size: 3.5rem;
+	line-height: 1;
+	transform-origin: right bottom;
+	transition: transform 0.3s ease;
+	color: $colorfour;
+	&:last-child {
+		position: absolute;
+		right: 0;
+	}
+	span {
+		display: inline-block;
+		overflow: hidden;
+		transition: width 0.3s ease;
+	}
+}
+@media only screen and (max-width: 800px) {
+	.calculator {
+		width: 100%;
+		height: 100vh;
+		border-radius: 0;
+	}
+}
